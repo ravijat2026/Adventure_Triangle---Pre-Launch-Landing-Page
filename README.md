@@ -76,34 +76,32 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-## Project Structure
+## Project structure
+```
+app/
+  page.tsx           # landing
+  login/page.tsx     # auth
+  admin/page.tsx     # dashboard
+components/
+  navigation.tsx     # header + mobile drawer
+  hero-section.tsx   # hero with CTA
+  about-section.tsx  # about content
+  mission-section.tsx
+  winter-trekking-section.tsx
+  partner-onboarding.tsx
+  launch-event-section.tsx
+  beta-registration.tsx
+  campaign-section.tsx
+  footer.tsx
+  ui/                # reusable controls
+public/
+  images/            # assets
+```
 
-\`\`\`
-adventure-triangle/
-├── app/
-│   ├── page.tsx           # Main landing page
-│   ├── layout.tsx         # Root layout with fonts
-│   ├── globals.css        # Global styles and theme
-│   ├── admin/
-│   │   └── page.tsx       # Admin dashboard
-│   └── api/               # API routes (if needed)
-├── components/
-│   ├── navigation.tsx     # Header navigation
-│   ├── hero-section.tsx   # Hero with tagline
-│   ├── about-section.tsx  # About Adventure Triangle
-│   ├── mission-section.tsx # Water | Air | Land missions
-│   ├── winter-trekking-section.tsx # Science of adventure
-│   ├── partner-onboarding.tsx # Partner application form
-│   ├── launch-event-section.tsx # Event registration
-│   ├── beta-registration.tsx # Beta user signup
-│   ├── campaign-section.tsx # #FeelTheAdventure
-│   ├── footer.tsx         # Footer with links
-│   └── ui/                # Reusable UI components
-├── public/
-│   └── logo.png           # Adventure Triangle logo
-├── package.json           # Dependencies
-└── README.md             # This file
-\`\`\`
+## Customize
+- Colors/theme: edit `app/globals.css` tokens
+- Content: update section components in `components/`
+- Data: replace localStorage writes in form handlers with real API calls
 
 ## Available Scripts
 
@@ -165,45 +163,6 @@ For testing the admin dashboard:
 
 - **Email**: admin@adventure.com
 - **Password**: admin123
-
-## Customization
-
-### Colors & Theme
-
-Edit `app/globals.css` to customize the color scheme:
-
-\`\`\`css
-@theme inline {
-  --color-primary: ...;
-  --color-secondary: ...;
-  /* Update colors here */
-}
-\`\`\`
-
-### Content
-
-All content can be edited in the respective component files under `components/` directory.
-
-### Forms
-
-Forms currently save to `localStorage`. To connect to a real backend:
-
-1. Create API routes in `app/api/`
-2. Replace `localStorage.setItem()` calls with `fetch()` to your API
-3. Update form handlers in each form component
-
-Example:
-\`\`\`typescript
-// Replace this:
-localStorage.setItem('partners', JSON.stringify(partners));
-
-// With this:
-await fetch('/api/partners', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(formData)
-});
-\`\`\`
 
 ## Deployment
 
@@ -287,20 +246,3 @@ npm install --save-dev typescript @types/node @types/react @types/react-dom
 - Review and rating system
 - Email notifications
 - Advanced search and filters
-
-## Support
-
-For issues or questions:
-- Email: info@adventuretriangle.com
-- Location: Toronto, Canada
-- Website: [Coming Soon]
-
-## License
-
-This project is private and proprietary to Adventure Triangle.
-
----
-
-**Built with ❤️ for Adventure Triangle**
-
-*"Where Every Journey Becomes Legend"*
