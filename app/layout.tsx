@@ -13,7 +13,6 @@ export const metadata: Metadata = {
   description:
     "Join the global adventure ecosystem connecting explorers with unforgettable experiences across water, air, and land. Pre-launch beta registration now open.",
   keywords: "adventure, travel, water sports, air sports, land adventures, outdoor activities",
-  generator: "v0.app",
   icons: {
     icon: [
       {
